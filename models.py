@@ -12,10 +12,10 @@ class Meals(models.model):
             max_length=200,
             validators=[MinLengthValidator(2, "Meal name must be greater than 1 character")]
     )
-    dairyf = models.PositiveIntegerField()
-    glutenf = models.PositiveIntegerField()
-    nutf = models.PositiveIntegerField()
-    soyf = models.PositiveIntegerField()
+    dairyf = models.BooleanField()
+    glutenf = models.BooleanField()
+    nutf = models.BooleanField()
+    soyf = models.BooleanField()
     scheduled = models.ForeignKey('DaysCalendar', on_delete=models.CASCADE, null=False)
 
 
